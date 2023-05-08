@@ -793,7 +793,7 @@ video {
 }
 
 .anim {
-  top: 100px;
+  top: 100px !important;
 }
 
 .popup_inner {
@@ -829,6 +829,10 @@ video {
     height: 75vh;
     overflow-y: scroll;
     width: 100%;
+  }
+
+  .anim{
+    top:1rem !important;
   }
 
   @keyframes anim {
