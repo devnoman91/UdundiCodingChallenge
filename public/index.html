@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDUNDI</title>
+    <!-- fonts -->
+    <link href="https://fonts.cdnfonts.com/css/didot" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="h-screen flex relative overflow-hidden">
+        <div class="bg-siteColor w-28 h-full"></div>
+        <div class="w-71 ">
+            <img class="block h-full w-full object-cover" src="..//src/images/Coding-Challenge-Image.png" alt="">
+        </div>
+
+        <!-- Details Modal -->
+        <div class="main-block absolute left-10 bottom-0 flex justify-end flex-wrap flex-col pb-150 md:left-44 md:pb-232">
+            <h1 class="font-didot text-7xl text-white w-full md:text-h1 md:leading-280" data-aos="fade-down" data-aos-duration="3000">Explore</h1>
+            <div class="more-details inline-flex top-4 cursor-pointer items-center relative md:-top-14 w-full">
+                <span class="block mr-5 popup overflow-hidden  w-43 h-43 relative">
+                    <img class="plus" src="..//src/images/Plus.svg" alt="">
+                    <div class="">
+                        <div class="popup_inner">
+                            <span class="hidden close cursor-pointer absolute right-0 top-0 mt-t-23 mr-r-23">
+                                <img src="..//src/images/Close.svg" alt="">
+                            </span>
+                            <h2 class="font-didot text-siteColor text-3xl md:text-h2" data-aos="fade-up">Explore</h2>
+                            <p class="font-lato font-normal text-md text-siteColor2 pt-26 pb-26 tracking-0.35 md:text-normalP">Sed
+                                ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                                voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                                amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+                                labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+                                nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+                                consequatur? </p>
+                            <a href="#"
+                                class="bg-gradient-to-r from-siteColor4 to-siteColor5 tracking-1.69286 w-full md:w-235 h-55 flex items-center justify-center text-white mt-0.5 border border-siteColor3 border-solid font-lato font-bold text-normalP">READ
+                                MORE</a>
+                        </div>
+                    </div>
+                </span>
+                <p class="font-lato text-white text-xl md:text-largeP">More Details</p>
+            </div>
+        </div>
+        <!-- Details Modal end -->
+
+
+        <!-- social icons -->
+        <div class="absolute bottom-10 right-6 md:right-8">
+            <a class="mb-5 block w-10 md:w-full" href="#" target="_blank"><img src="..//src/images/Facebook.svg" alt=""></a>
+            <a class="block w-10 md:w-full" href="#" target="_blank"><img src="..//src/images/Instagram.svg" alt=""></a>
+        </div>
+        <!-- social icons end -->
+    </div>
+    <!-- js animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        document.querySelector('.more-details').addEventListener('click', () => {
+            document.querySelector('.popup').classList.add('animation');
+            document.querySelector('.main-block').classList.add('main-new');
+            document.querySelector('.more-details').classList.add('anim');
+            setTimeout(() => {
+                document.querySelector('.popup_inner').classList.add('popup_open');
+            }, 700)
+        });
+
+        document.querySelector('.close').addEventListener('click', () => {
+            document.querySelector('.popup').classList.remove('animation');
+            document.querySelector('.more-details').classList.remove('anim2');
+            document.querySelector('.main-block').classList.remove('main-new');
+            setTimeout(() => {
+                document.querySelector('.popup_inner').classList.remove('popup_open');
+                // Remove all added classes
+                document.querySelectorAll('.animation').forEach(el => el.classList.remove('animation'));
+                document.querySelectorAll('.anim').forEach(el => el.classList.remove('anim'));
+                document.querySelectorAll('.popup_open').forEach(el => el.classList.remove('popup_open'));
+                document.querySelector('.main-block').classList.remove('main-new');
+            }, 700)
+        });
+
+    </script>
+</body>
+
+</html>
